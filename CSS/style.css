@@ -1,0 +1,934 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #172033;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   2. ACESSIBILIDADE
+   ========================================================= */
+
+:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   3. CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. CABEÇALHO
+   ========================================================= */
+
+.cabecalho {
+    background: #071525;
+    color: #ffffff;
+    border-bottom: 1px solid #19304a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.cabecalho-conteudo {
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   5. LOGOTIPO
+   ========================================================= */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo-icone {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #00a8e8;
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.logo strong {
+    display: block;
+    font-size: 21px;
+    line-height: 1.1;
+}
+
+.logo small {
+    display: block;
+    margin-top: 3px;
+
+    color: #9fb2c7;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   6. MENU
+   ========================================================= */
+
+.menu ul {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+
+    padding: 10px 13px;
+
+    color: #d9e3ed;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 7px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.menu a:hover {
+    color: #ffffff;
+    background: #102b45;
+}
+
+.menu a.ativo {
+    color: #ffffff;
+    background: #0077b6;
+}
+
+
+/* =========================================================
+   7. HERO
+   ========================================================= */
+
+.hero {
+    background:
+        linear-gradient(135deg,
+            #071525 0%,
+            #0c243c 55%,
+            #103b59 100%);
+
+    color: #ffffff;
+
+    padding: 85px 0;
+}
+
+.hero-conteudo {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+    align-items: center;
+
+    gap: 65px;
+}
+
+.hero-texto {
+    max-width: 650px;
+}
+
+.etiqueta {
+    margin-bottom: 13px;
+
+    color: #00a8e8;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin-bottom: 22px;
+
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #00a8e8;
+}
+
+.hero-descricao {
+    max-width: 590px;
+
+    margin-bottom: 30px;
+
+    color: #c8d5e3;
+    font-size: 17px;
+}
+
+.hero-botoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   8. BOTÕES
+   ========================================================= */
+
+.botao {
+    display: inline-block;
+
+    padding: 13px 21px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.botao:hover {
+    transform: translateY(-2px);
+}
+
+.botao-principal {
+    background: #00a8e8;
+    color: #ffffff;
+}
+
+.botao-principal:hover {
+    background: #008ac2;
+}
+
+.botao-secundario {
+    border: 1px solid #668096;
+    color: #ffffff;
+}
+
+.botao-secundario:hover {
+    background: #ffffff;
+    color: #071525;
+}
+
+.botao-claro {
+    background: #ffffff;
+    color: #071525;
+}
+
+.botao-claro:hover {
+    background: #e9f7fc;
+}
+
+
+/* =========================================================
+   9. TÍTULOS DAS SECÇÕES
+   ========================================================= */
+
+.titulo-secao {
+    max-width: 720px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.titulo-secao h2 {
+    margin-bottom: 15px;
+
+    color: #172033;
+
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.15;
+}
+
+.titulo-secao>p:last-child {
+    color: #667085;
+}
+
+
+/* =========================================================
+   10. INTRODUÇÃO
+   ========================================================= */
+
+.introducao {
+    padding: 85px 0;
+    background: #ffffff;
+}
+
+.destaques {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.destaque-card {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e9ef;
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 25px rgba(17, 38, 63, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.destaque-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(17, 38, 63, 0.1);
+}
+
+.icone-card {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background: #e9f7fc;
+
+    border-radius: 10px;
+
+    font-size: 25px;
+}
+
+.destaque-card h3 {
+    margin-bottom: 10px;
+
+    color: #172033;
+    font-size: 20px;
+}
+
+.destaque-card p {
+    margin-bottom: 18px;
+
+    color: #667085;
+}
+
+.destaque-card a {
+    color: #0077b6;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.destaque-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   11. ÁREAS DE ATUAÇÃO
+   ========================================================= */
+
+.areas {
+    padding: 85px 0;
+
+    background: #eef4f8;
+}
+
+.areas-conteudo {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 65px;
+}
+
+.areas-imagem img {
+    width: 100%;
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+}
+
+.areas-texto h2 {
+    margin-bottom: 18px;
+
+    color: #172033;
+
+    font-size: 38px;
+    line-height: 1.15;
+}
+
+.areas-texto>p {
+    margin-bottom: 22px;
+
+    color: #667085;
+}
+
+.lista-check {
+    margin-bottom: 25px;
+
+    list-style: none;
+}
+
+.lista-check li {
+    position: relative;
+
+    margin-bottom: 10px;
+    padding-left: 28px;
+
+    color: #344054;
+}
+
+.lista-check li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    color: #0077b6;
+    font-weight: 800;
+}
+
+.link-seta {
+    color: #0077b6;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.link-seta:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   12. CURSOS
+   ========================================================= */
+
+.cursos-resumo {
+    padding: 85px 0;
+
+    background: #ffffff;
+}
+
+.cursos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.curso-card {
+    position: relative;
+
+    min-height: 240px;
+
+    padding: 28px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e1e7ed;
+    border-radius: 12px;
+
+    transition: transform 0.2s ease;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px);
+}
+
+.curso-numero {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #00a8e8;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.curso-card h3 {
+    margin-bottom: 12px;
+
+    font-size: 19px;
+}
+
+.curso-card p {
+    color: #667085;
+}
+
+.centro-botao {
+    margin-top: 35px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   13. CHAMADA FINAL
+   ========================================================= */
+
+.chamada {
+    padding: 65px 0;
+
+    background: #0077b6;
+
+    color: #ffffff;
+}
+
+.chamada-conteudo {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.chamada h2 {
+    margin-bottom: 10px;
+
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.chamada p:not(.etiqueta) {
+    color: #d9f1fa;
+}
+
+.chamada .etiqueta {
+    color: #bdefff;
+}
+
+
+/* =========================================================
+   14. RODAPÉ
+   ========================================================= */
+
+.rodape {
+    background: #071525;
+    color: #ffffff;
+}
+
+.rodape-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding: 60px 0;
+}
+
+.logo-rodape {
+    margin-bottom: 20px;
+}
+
+.rodape-grid>div:first-child>p {
+    max-width: 320px;
+
+    color: #9fb2c7;
+}
+
+.rodape h3 {
+    margin-bottom: 15px;
+
+    font-size: 16px;
+}
+
+.rodape ul {
+    list-style: none;
+}
+
+.rodape li {
+    margin-bottom: 8px;
+}
+
+.rodape a {
+    color: #c6d2df;
+
+    text-decoration: none;
+}
+
+.rodape a:hover {
+    color: #00a8e8;
+}
+
+.rodape address {
+    font-style: normal;
+    color: #9fb2c7;
+}
+
+.rodape address p {
+    margin-bottom: 8px;
+}
+
+.rodape-final {
+    padding: 18px 0;
+
+    border-top: 1px solid #19304a;
+
+    color: #8498ad;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   15. PÁGINAS INTERNAS
+   ========================================================= */
+
+.pagina-cabecalho {
+    padding: 70px 0;
+
+    background: #0c243c;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.pagina-cabecalho h1 {
+    margin-bottom: 10px;
+
+    font-size: clamp(34px, 5vw, 48px);
+}
+
+.pagina-cabecalho p {
+    color: #c6d6e5;
+}
+
+
+/* =========================================================
+   16. DESENVOLVEDOR — PÁGINA SOBRE
+   ========================================================= */
+
+.desenvolvedor {
+    padding: 60px 0;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.desenvolvedor-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.desenvolvedor-foto {
+    flex-shrink: 0;
+}
+
+.desenvolvedor-foto img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    display: block;
+}
+
+.desenvolvedor-texto {
+    max-width: 700px;
+}
+
+.desenvolvedor-texto h2 {
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.desenvolvedor-texto .cargo {
+    color: #60a5fa;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.desenvolvedor-texto p {
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   17. RESPONSIVIDADE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .cabecalho-conteudo {
+        flex-direction: column;
+
+        padding: 18px 0;
+
+        gap: 15px;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero-conteudo {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-texto {
+        margin: 0 auto;
+    }
+
+    .hero-descricao {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-botoes {
+        justify-content: center;
+    }
+
+    .hero-imagem img {
+        height: 350px;
+    }
+
+    .destaques {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .areas-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .cursos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rodape-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   18. RESPONSIVIDADE — TELEMÓVEL
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .cabecalho {
+        position: relative;
+    }
+
+    .cabecalho-conteudo {
+        align-items: center;
+    }
+
+    .menu ul {
+        gap: 2px;
+    }
+
+    .menu a {
+        padding: 8px 7px;
+
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-imagem img {
+        height: 260px;
+    }
+
+    .introducao,
+    .areas,
+    .cursos-resumo {
+        padding: 60px 0;
+    }
+
+    .destaques {
+        grid-template-columns: 1fr;
+    }
+
+    .areas-imagem img {
+        height: 260px;
+    }
+
+    .areas-texto h2 {
+        font-size: 31px;
+    }
+
+    .cursos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chamada {
+        padding: 50px 0;
+    }
+
+    .chamada-conteudo {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .chamada h2 {
+        font-size: 27px;
+    }
+
+    .desenvolvedor-conteudo {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .desenvolvedor-foto img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .desenvolvedor-texto h2 {
+        font-size: 25px;
+    }
+
+    .rodape-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 45px 0;
+    }
+
+}
+
+
+/* =========================================================
+   19. REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
